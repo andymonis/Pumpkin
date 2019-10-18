@@ -16,7 +16,8 @@ services:
   - docker
 
 before_install:
-  - ./aos/creds.sh
+  - ./aos/configure_aws_credentials.sh
+  - ./aos/create_config.sh
   - pip install --user awscli
   # AMONIS: disabeld as parsing secrets failed
   # - aws  s3 sync --exact-timestamps   --exclude "*" --include "*.deb" s3://pumpco/ stage3/00-install-packages/files/
@@ -25,4 +26,4 @@ sudo: enabled
 
 install:
 #    - rake build_base_docker_image
-    - ./dependencies.sh
+    - ./aos/dependencies.sh
