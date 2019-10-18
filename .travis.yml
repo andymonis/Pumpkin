@@ -21,9 +21,9 @@ before_install:
 
 sudo: enabled
 
-branches:
-  only:
-  - /.*/rs
+# branches:
+#   only:
+#   - /.*/rs
 
 install:
 #    - rake build_base_docker_image
