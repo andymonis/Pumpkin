@@ -19,4 +19,5 @@ time ./build-docker.sh
 #docker rm -v pigen_work
 #time ./build-docker2.sh
 
-aws s3 sync --exact-timestamps --region eu-west-2  --exclude "*" --include "*.zip" --include "*.info" deploy/ s3://pumpco
+# AMONIS: disabled for now
+# aws s3 sync --exact-timestamps --region eu-west-2  --exclude "*" --include "*.zip" --include "*.info" deploy/ s3://pumpco
