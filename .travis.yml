@@ -15,16 +15,16 @@ services:
   - docker
 
 before_install:
-  - ./aos/configure_aws_credentials.sh    # Install AWS credentials
-  - pip install --user awscli             # Install AWS Command Line 
-  - aws  s3 sync --exact-timestamps --exclude "*" --include "*.deb" s3://pumpco/ stage3/00-install-packages/files/
+  - ./aos/creds.sh
+  - pip install --user awscli
+  - aws  s3 sync --exact-timestamps   --exclude "*" --include "*.deb" s3://pumpco/ stage3/00-install-packages/files/
 
 sudo: enabled
 
 # branches:
 #   only:
-#   - /.*/rs
+#   - /.*/
 
 install:
 #    - rake build_base_docker_image
-    - ./aos/dependencies.sh
+    - ./travis.scripts/dependencies.sh
