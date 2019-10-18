@@ -25,4 +25,4 @@ sudo: enabled
 
 install:
 #    - rake build_base_docker_image
-    - ./aos/dependencies.sh
+    - ./dependencies.sh
