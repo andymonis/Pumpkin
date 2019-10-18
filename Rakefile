@@ -23,7 +23,7 @@ task "encrypt_aws_creds" do
     puts akid, ask
 end
 
-# AMONIS: Not used 
+# AMONIS: Not used 18/10/2019
 task "build_base_docker_image" do
     puts "building iotaa-pi-gen"
     `docker build -t timcoote/iotaa-pi-gen -f Dockerfile .`
