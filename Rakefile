@@ -29,3 +29,16 @@ task "build_base_docker_image" do
     `docker build -t timcoote/iotaa-pi-gen -f Dockerfile .`
     `docker push timcoote/iotaa-pi-gen`
 end
+
+# Design Time Task
+# Generate Travis secrets for AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY
+# This generates two secure entries that can be used in the .travis.yml file. 
+# echoed to the screen or --add will auto add if in the project
+# Requires python / rake and travis to be installed
+# Passwords in PWSafe
+# AMONIS: 21/10/2019
+task "create_aws_credetials" do
+    akid = `travis encrypt AWS_ACCESS_KEY_ID="<PWSafe aws/Jenkins_Aws/username>" `
+    ask  = `travis encrypt AWS_SECRET_ACCESS_KEY="<PWSafe aws/Jenkins_Aws/password>"`
+    puts akid, ask
+end
