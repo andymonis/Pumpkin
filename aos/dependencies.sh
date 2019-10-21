@@ -13,7 +13,7 @@ sudo su -c 'echo -n ":arm:M::\\x7fELF\\x01\\x01\\x01\\x00\\x00\\x00\\x00\\x00\\x
 rake
 
 # touch {export-noobs,stage5}/SKIP
-touch {export-noobs}/SKIP
+# touch {export-noobs}/SKIP
 
 # comment in/out these two lines to get travis to upload an initial docker image for stage0 (also tried modifying to stage2). If left, travis will timeout, before completiion
 time ./build-docker.sh
